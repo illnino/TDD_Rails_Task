@@ -21,4 +21,9 @@ class TasksController < ApplicationController
       redirect_to :back, :notice => 'There was an error'
     end
   end
+
+  def destroy
+    Task.destroy params[:id]
+    redirect_to :back, :notice => 'Task has been deleted'
+  end
 end

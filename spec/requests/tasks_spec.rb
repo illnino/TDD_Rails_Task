@@ -49,4 +49,15 @@ describe "Tasks" do
         page.should have_content 'There was an error'
     end
   end
+
+  describe "DELETE /tasks" do
+    it "should delete a task" do
+      visit tasks_path
+      find("#task_#{@task.id}").click_link 'Delete'
+
+      # current_path.should == tasks_path
+      page.should have_content 'Task has been deleted'
+      page.should have_no_content 'go to bed'
+    end
+  end
 end
