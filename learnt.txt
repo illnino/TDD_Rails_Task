@@ -1,0 +1,2 @@
+1. test.db wont be migrated
+rake environment RAILS_ENV=test db:migrate
